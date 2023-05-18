@@ -28,7 +28,7 @@ namespace DPA.Shopping.DOMAIN.Infraestructure.Repositories
 
         public async Task<bool> Update(Favorite favorite)
         {
-            await _dbContext.Favorite.AddAsync(favorite);
+            _dbContext.Favorite.Update(favorite);
             var rows = await _dbContext.SaveChangesAsync();
             return rows > 0;
         }
